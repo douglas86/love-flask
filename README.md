@@ -2,6 +2,7 @@
 
 - [Installing Flask](#installing-flask)
 - [Getting started](#getting-started)
+- [Templates](#templates)
 
 ---
 
@@ -38,6 +39,42 @@ host=os.environ.get("IP", "0.0.0.0"),
 port=int(os.environ.get("PORT", "5000")),
 debug=True
 )
+
+---
+
+## [Templates](#table-of-content)
+
+- Inorder to use templates in Flask
+- Create a directory called templates at the same level as run.py
+- In the run.py file to render a html template file
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+- In the index.html
+- Using html:5 boilerplate emmet command
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello Flask</title>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="#">Home</a> </li>
+        <li><a href="#">About</a> </li>
+    </ul>
+</nav>
+
+<h1>Home Page</h1>
+</body>
+</html>
 
 ---
 
