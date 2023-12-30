@@ -1,3 +1,46 @@
+# Table of Content
+
+- [Installing Flask](#installing-flask)
+- [Getting started](#getting-started)
+
+---
+
+## [Installing Flask](#table-of-content)
+
+- Type the following command into the terminal using pip3
+- $ pip3 install Flask
+
+---
+
+## [Getting started](#table-of-content)
+
+- The main file for running Flask is normally called app.py or run.py
+- I will be using run.py for creating of this project
+- Create a new file called run.py
+- You can create it using the following terminal command
+- $ touch run.py
+- Place the following in run.py file
+
+import os
+from flask import Flask
+
+app = Flask(__name__)  # create an instance of flask
+
+
+@app.route('/')
+def index():
+return "Hello, world"
+
+
+if __name__ == "__main__":
+app.run(
+host=os.environ.get("IP", "0.0.0.0"),
+port=int(os.environ.get("PORT", "5000")),
+debug=True
+)
+
+---
+
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 Welcome,
