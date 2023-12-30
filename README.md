@@ -3,6 +3,7 @@
 - [Installing Flask](#installing-flask)
 - [Getting started](#getting-started)
 - [Templates](#templates)
+- [Routing](#routing)
 
 ---
 
@@ -75,6 +76,28 @@ def index():
 <h1>Home Page</h1>
 </body>
 </html>
+
+---
+
+## [Routing](#table-of-content)
+
+- In order to using routing declare a decorator above the function
+- In the run.py file
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+- In the template make sure to change the li tags
+
+<nav>
+    <ul>
+        <li><a href="{{ url_for('index') }}">Home</a> </li>
+        <li><a href="{{ url_for('about') }}">About</a> </li>
+    </ul>
+</nav>
+
+- the work index and about is the name of the template to be rendered
 
 ---
 
